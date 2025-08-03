@@ -28,8 +28,9 @@ module.exports.showListing = async (req, res) => {
     }
 
     console.log("Listing Data:", listing);
-    res.render("listings/show.ejs", { listing });
+    res.render("listings/show.ejs", { listing, mapToken }); // ✅ Pass token here
 };
+
 
 module.exports.createListing = async (req, res) => {
     let response = await geocodingClient
